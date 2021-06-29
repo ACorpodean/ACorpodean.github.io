@@ -44,14 +44,21 @@ function showPage(id) {
 }
 
 function hiddeAllPages() {
-    var pageIDs = [
-        'Home','Languages','Projects','Skills'
-    ];
+    var pages= Array.from(document.getElementsByClassName('page'));
+    console.warn('pages', pages);
+pages.forEach(function(page){
+    // console.warn('inside forEach',page.id);
+    hidePage(page.id);
+});
 
-    pageIDs.forEach (function(pageID, index){
-        // console.info('inside forEach',pageID, index);
-        hidePage(pageID);
-    });
+    // var pageIDs = [
+    //     'Home','Languages','Projects','Skills'
+    // ];
+
+    // pageIDs.forEach (function(pageID, index){
+    //     // console.info('inside forEach',pageID, index);
+    //     hidePage(pageID);
+    // });
     // var i=0;
     // i++ daca incepe de la 0 nu i+1 - se executa intai i ca valoare si se opereaza, dupa se executa ++ si se opereaza noua valoare//
     // hidePage(pageIDs[i++]);
