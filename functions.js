@@ -47,24 +47,29 @@ function hiddeAllPages() {
     var pageIDs = [
         'Home','Languages','Projects','Skills'
     ];
-    var i=0;
-    // i++ daca incepe de la 0 nu i+1//
+
+    pageIDs.forEach (function(pageID, index){
+        // console.info('inside forEach',pageID, index);
+        hidePage(pageID);
+    });
+    // var i=0;
+    // i++ daca incepe de la 0 nu i+1 - se executa intai i ca valoare si se opereaza, dupa se executa ++ si se opereaza noua valoare//
     // hidePage(pageIDs[i++]);
     // hidePage(pageIDs[i++]);
     // hidePage(pageIDs[i++]);
     // hidePage(pageIDs[i++]);
 
-    // for () {
-    //     hidePage(pageIDs[i++])
+    // for (var i=0;i<pageIDs.length;i++) {
+    //     hidePage(pageIDs[i]);
     // }
-    while(i<pageIDs.length){
-        console.info("i=", i);
-        // hidePage(pageIDs[i++]); same as below
-        hidePage(pageIDs[i]);
-        i++; 
+    // while(i<pageIDs.length){
+    //     console.info("i=", i);
+    //     // hidePage(pageIDs[i++]); same as below
+    //     hidePage(pageIDs[i]);i++; 
         // i= i+1 (1 increment); i= i+2 (2 increment..even nr)//
         // i += 2;//
-    }
+        
+    // }
 }
 
 function showSkills() {
