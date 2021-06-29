@@ -44,10 +44,27 @@ function showPage(id) {
 }
 
 function hiddeAllPages() {
-    hidePage('Skills');
-    hidePage('Projects');
-    hidePage('Languages');
-    hidePage('Home');
+    var pageIDs = [
+        'Home','Languages','Projects','Skills'
+    ];
+    var i=0;
+    // i++ daca incepe de la 0 nu i+1//
+    // hidePage(pageIDs[i++]);
+    // hidePage(pageIDs[i++]);
+    // hidePage(pageIDs[i++]);
+    // hidePage(pageIDs[i++]);
+
+    // for () {
+    //     hidePage(pageIDs[i++])
+    // }
+    while(i<pageIDs.length){
+        console.info("i=", i);
+        // hidePage(pageIDs[i++]); same as below
+        hidePage(pageIDs[i]);
+        i++; 
+        // i= i+1 (1 increment); i= i+2 (2 increment..even nr)//
+        // i += 2;//
+    }
 }
 
 function showSkills() {
@@ -74,3 +91,5 @@ function showLanguages() {
     showPage('Languages');
     // return console.info('Languages has been displayed.');
 }
+
+showSkills();
