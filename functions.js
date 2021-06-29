@@ -14,35 +14,63 @@ var wellcome=getInfo(myName)
 console.info(wellcome);
 console.warn(wellcome);
 
+function hidePage(id) {
+    console.info('hide page', id)
+    document.getElementById(id).style.display='none';
+}
+
+function showPage(id) {
+    console.info('show page', id);
+    document.getElementById(id).style.display='block';
+    // var page=document.getElementById(id);
+    // console.info('show', page);
+    // if (page) 
+    // {
+    //     page.style.display='block';
+    //     page.style.borderColor='#00ff00';
+    //     setTimeout(function() {
+    //         page.style.borderColor='#55df44';
+    //     }, 1000);
+    //     setTimeout(function() {
+    //         page.style.borderColor='#99df88';
+    //     }, 2000);
+    //     setTimeout(function() {
+    //         page.style.borderColor='#e0dfdc';
+    //     }, 3000);
+    // } else {
+    //     console.warn("pagina cu idul %s nu exista", id);
+    // }
+
+}
+
+function hiddeAllPages() {
+    hidePage('Skills');
+    hidePage('Projects');
+    hidePage('Languages');
+    hidePage('Home');
+}
+
 function showSkills() {
-    document.getElementById('Skills').style.display='block';
-    document.getElementById('Home').style.display='none';
-    document.getElementById('Projects').style.display='none';
-    document.getElementById('Languages').style.display='none';
-    return console.info('Skills has been displayed.');
+    hiddeAllPages ();
+    showPage('Skills');
+//     return console.info('Skills has been displayed.');
 }
 
 
 function showHome() {
-    document.getElementById('Home').style.display='block';
-    document.getElementById('Skills').style.display='none';
-    document.getElementById('Projects').style.display='none';
-    document.getElementById('Languages').style.display='none';
-    return console.info('Home has been displayed.');
+    hiddeAllPages ();
+    showPage('Home');
+    // return console.info('Home has been displayed.');
 }
 
 function showProjects() {
-    document.getElementById('Home').style.display='none';
-    document.getElementById('Skills').style.display='none';
-    document.getElementById('Projects').style.display='block';
-    document.getElementById('Languages').style.display='none';
-    return console.info('Projects has been displayed.');
+    hiddeAllPages ();
+    showPage('Projects');
+    // return console.info('Projects has been displayed.');
 }
 
 function showLanguages() {
-    document.getElementById('Home').style.display='none';
-    document.getElementById('Skills').style.display='none';
-    document.getElementById('Projects').style.display='none';
-    document.getElementById('Languages').style.display='block';
-    return console.info('Languages has been displayed.');
+    hiddeAllPages ();
+    showPage('Languages');
+    // return console.info('Languages has been displayed.');
 }
