@@ -1,0 +1,84 @@
+/*header, footer {
+    padding: 4px;
+    margin: 2px;
+    border: 2px solid blue;
+}
+#content {
+    border: 2px solid green;
+}
+#content div, #side-menu section {
+    padding: 4px;
+    margin: 2px;
+    border: 2px solid red;
+}
+#side-menu section {
+    border: 2px solid green;
+}
+*/
+
+html {
+    height: 100%;
+}
+body {
+    margin: 0;
+    min-height: 100%;
+    display: flex;
+    flex-direction: column;
+}
+header, body > section {
+    flex: 1;
+}
+#content {
+    flex: 4;
+    display: flex;
+    flex-direction: row;
+    padding-top: 10px;
+}
+#side-menu {
+    flex: 1;
+    padding: 0 10px;
+}
+#main {
+    flex: 3;
+    padding: 0 5px;
+    
+}
+#footer {
+    max-height: 20px;
+}
+#ContactMe {
+    width: 100%;
+    padding: 0;
+    margin: 0;
+}
+#userEmail {
+    padding: 0;
+    width: 100%;
+    margin: 0;
+}
+
+
+#header-orient {
+    display: flex;
+    align-items: center;
+    flex-direction: row;
+    }
+#header-set {
+    flex: 1;
+    padding: 10px 0 0 0;
+    /*border: 2px solid red;*/
+}
+#titledoc {
+    margin: 5px 0;
+}
+#name {
+    color: #334455;
+    margin: 5px 0;
+    font-weight: bold;
+}
+#picture {
+    padding: 5px;
+    /*border: 2px solid green; */
+    border-radius:50%;  
+}
+
