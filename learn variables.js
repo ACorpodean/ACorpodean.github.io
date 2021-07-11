@@ -1,28 +1,6 @@
-console.info("Age:" + age);
-console.info("Salut");
-console.warn("Salut");
-console.error("Salut");
-console.debug("132/2");
-var name = "Andrei";
-console.info("Name:" + name);
-
-var age = 12 + 19;
-console.info("Age:");
-console.info(age);
-
-console.warn("Age:",age);
-
-var skills=["html",'css',`js`];
-console.info("skills",skills)
-
-name="Dre";
-console.info("Name:" + name);
 
 var m = document.getElementById("motto");
 console.info('my motto', m);
-
-
-/* m.style.backgroundColor='red'; */
 
 m.onclick = function() 
 {
