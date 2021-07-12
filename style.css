@@ -73,6 +73,10 @@ footer {
     background-color: black;
     color: #f5f5f5;
 }
+
+footer a {
+    color: white;
+}
   
 
 

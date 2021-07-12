@@ -2,6 +2,7 @@
 function hidePage(name) {
     document.getElementById(name).style.display='none';
 }
+
 function showPage(name) {
     var page = document.getElementById(name);
     if (page) {
@@ -11,14 +12,16 @@ function showPage(name) {
         console.warn("Pagina cu id-ul %o nu exista", name);
     }
 }
-function hiddeAllPages()
-{
+
+function hiddeAllPages() {
+
     var pages=Array.from(document.getElementsByClassName('page'));
-    pages.forEach(function(page)
- {
-    hidePage(page.id); 
- });
+    
+    pages.forEach(function(page){
+        hidePage(page.id); 
+    });
 }
+
 function highlight(el) {
     el.style.borderColor='#00df00';
     setTimeout(function() {
@@ -31,7 +34,6 @@ function highlight(el) {
         el.style.borderColor='#e0dfdc';
     }, 300);
 }
-
 
 function showSkills() {
     hiddeAllPages ();

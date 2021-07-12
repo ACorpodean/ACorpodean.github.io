@@ -4,10 +4,6 @@ console.info('my motto', m);
 
 m.onclick = function() 
 {
-    console.info('click pe motto');
-        /* m.innerHTML = "<strong>Somer</strong> @ <i>AcasaSRL</i>";
-    m.style.color= '#1144dd'; */
-
     if (m.innerText == 'Consilier Juridic @ Primaria Osorhei') 
     {
         m.innerHTML = "<strong>Somer</strong> @ <i>AcasaSRL</i>";
