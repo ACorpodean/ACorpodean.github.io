@@ -1,6 +1,5 @@
 
 var m = document.getElementById("motto");
-console.info('my motto', m);
 
 m.onclick = function() 
 {
