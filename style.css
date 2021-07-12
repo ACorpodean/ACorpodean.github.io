@@ -23,8 +23,10 @@ body {
     padding: 5px 15px 5px 15px;
     display: inline-block;
     margin: 2px 0;
+    border-radius: 2em;
     color: #fff;
     border: 1px solid transparent;
+    transition: 1.0s;
 }
 #top-menu-bar a:visited{
     color:#fff;

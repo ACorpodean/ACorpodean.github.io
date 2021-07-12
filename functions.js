@@ -9,6 +9,9 @@ function highlight(el) {
     setTimeout(function() {
         el.style.borderColor='#e0dfdc';
     }, 300);
+    setTimeout(function() {
+        el.style.borderColor='';
+    }, 400);
 }
 
 function hide(name) {
