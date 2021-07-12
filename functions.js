@@ -1,3 +1,4 @@
+
 function hidePage(name) {
     document.getElementById(name).style.display='none';
 }
@@ -9,11 +10,10 @@ function showPage(name) {
     } else {
         console.warn("Pagina cu id-ul %o nu exista", name);
     }
-    
 }
 function hiddeAllPages()
 {
-    var pages= Array.from(document.getElementsByClassName('page'));
+    var pages=Array.from(document.getElementsByClassName('page'));
     pages.forEach(function(page)
  {
     hidePage(page.id); 
