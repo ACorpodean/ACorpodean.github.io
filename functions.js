@@ -20,7 +20,7 @@ function hide(name) {
 
 function hideAllPages() {
     var pages=Array.from(document.getElementsByClassName('page'));  
-    pages.forEach(function(page){
+        pages.forEach(function(page){
         hide(page.id); 
     });
 }
@@ -32,6 +32,14 @@ function show(name) {
     } else {
         console.warn("Pagina cu id-ul %o nu exista", name);
     }
+
+    var oldLink = document.querySelector(`a[data-page].active`);
+    if (oldLink) {
+        oldLink.classList.remove("active");
+    }
+       var link = document.querySelector(`a[data-page=${name}]`);
+    // var link = document.querySelector("a[data-page=" + name + "]");
+       link.classList.add("active");
 }
 
 function showPage(id) {
@@ -39,7 +47,7 @@ function showPage(id) {
     show(id);
 };
 
-showPage('Home');
+showPage('home');
 
 document.querySelector('#top-menu-bar').addEventListener("click", function(e){
     
