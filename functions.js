@@ -37,9 +37,9 @@ function show(name) {
     if (oldLink) {
         oldLink.classList.remove("active");
     }
-       var link = document.querySelector(`a[data-page=${name}]`);
-    // var link = document.querySelector("a[data-page=" + name + "]");
-       link.classList.add("active");
+    var link = document.querySelector(`a[data-page=${name}]`);
+// var link = document.querySelector("a[data-page=" + name + "]");
+    link.classList.add("active");
 }
 
 function showPage(id) {
@@ -47,7 +47,7 @@ function showPage(id) {
     show(id);
 };
 
-showPage('home');
+showPage('skills');
 
 document.querySelector('#top-menu-bar').addEventListener("click", function(e){
     
@@ -57,3 +57,14 @@ document.querySelector('#top-menu-bar').addEventListener("click", function(e){
         highlight(e.target);
     } 
 });
+
+var skills = [
+    'html','js','css'
+];
+
+var skillsHtml = skills.map(function(skill){
+    console.info(skill);
+    return `<li>${skill}</li>`;
+}).join('');
+
+document.querySelector('#skills  ul').innerHTML = skillsHtml;
