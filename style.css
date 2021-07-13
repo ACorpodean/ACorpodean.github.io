@@ -25,7 +25,7 @@ body {
     margin: 2px 0;
     border-radius: 2em;
     color: #fff;
-    border: 1px solid transparent;
+    border: 2px solid transparent;
     transition: 1.0s;
 }
 #top-menu-bar a:visited{

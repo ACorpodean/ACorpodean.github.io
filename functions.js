@@ -40,3 +40,12 @@ function showPage(id) {
 };
 
 showPage('Home');
+
+document.querySelector('#top-menu-bar').addEventListener("click", function(e){
+    
+    if (e.target.matches("a")) {
+        var id= e.target.getAttribute("data-page");
+        showPage(id);
+        highlight(e.target);
+    } 
+});
