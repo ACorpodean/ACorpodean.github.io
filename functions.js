@@ -64,15 +64,31 @@ function showSkills(skills) {
     var skillsHtml = skills.map(function(skill){
         var favorit = skill.favorit ? 'class="favorit"' : '';
         var endorsements = skill.endorsements >5 ? `<span>${skill.endorsements}</span>` : '';
-        return `<li ${favorit}>${skill.name} ${endorsements}</li>`;
+        return `<li ${favorit}>${skill.name.toLowerCase()} ${endorsements}</li>`;
     }).join('');
 
     document.querySelector('#skills  ul').innerHTML = skillsHtml;
 };
 
+function sortSkillsByName (a,b) {
+    var aName = a.name.toUpperCase();
+    var bName = b.name.toUpperCase();
+    if (aName < bName) {
+        return -1;
+    }
+    if (aName > bName) {
+        return 1;
+    }
+    return 0;
+};
+ function sortSkillsByEndorsemenets (a,b) {
+    return b.endorsements - a.endorsements;
+ };
+
 fetch("data/skills.json").then(function(response) {
     return response.json();
 }).then(function(skills){
+    skills.sort(sortSkillsByEndorsemenets);
     window.skills = skills; /* same name variable global >local */
     showSkills(skills);
 })
