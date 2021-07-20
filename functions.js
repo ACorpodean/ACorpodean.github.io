@@ -19,25 +19,26 @@ function hide(name) {
 }
 
 function hideAllPages() {
-    var pages=Array.from(document.getElementsByClassName('page'));  
+    const pages=Array.from(document.getElementsByClassName('page'));  
         pages.forEach(function(page){
         hide(page.id); 
     });
 }
 function show(name) {
-    var page = document.getElementById(name);
+    const page = document.getElementById(name);
     if (page) {
         page.style.display='block';
         highlight(page);
+        page=null;
     } else {
         console.warn("Pagina cu id-ul %o nu exista", name);
     }
 
-    var oldLink = document.querySelector(`a[data-page].active`);
+    const oldLink = document.querySelector(`a[data-page].active`);
     if (oldLink) {
         oldLink.classList.remove("active");
     }
-    var link = document.querySelector(`a[data-page=${name}]`);
+    const link = document.querySelector(`a[data-page=${name}]`);
 // var link = document.querySelector("a[data-page=" + name + "]");
     link.classList.add("active");
 }
@@ -52,18 +53,18 @@ showPage('skills');
 document.querySelector('#top-menu-bar').addEventListener("click", function(e){
     
     if (e.target.matches("a")) {
-        var id= e.target.getAttribute("data-page");
+        const id= e.target.getAttribute("data-page");
         showPage(id);
         highlight(e.target);
     } 
 });
 
-var skills = [];
+window.skills = [];
 
 function showSkills(skills) {
-    var skillsHtml = skills.map(function(skill){
-        var favorit = skill.favorit ? 'class="favorit"' : '';
-        var endorsements = skill.endorsements >5 ? `<span>${skill.endorsements}</span>` : '';
+    const skillsHtml = skills.map(function(skill){
+        const favorit = skill.favorit ? 'class="favorit"' : '';
+        const endorsements = skill.endorsements >5 ? `<span>${skill.endorsements}</span>` : '';
         return `<li ${favorit}>${skill.name.toLowerCase()} ${endorsements}</li>`;
     }).join('');
 
@@ -71,8 +72,8 @@ function showSkills(skills) {
 };
 
 function sortSkillsByName (a,b) {
-    var aName = a.name.toUpperCase();
-    var bName = b.name.toUpperCase();
+    const aName = a.name.toUpperCase();
+    const bName = b.name.toUpperCase();
     if (aName < bName) {
         return -1;
     }
