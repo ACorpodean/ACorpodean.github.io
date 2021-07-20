@@ -20,10 +20,9 @@ function hide(name) {
 
 function hideAllPages() {
     const pages=Array.from(document.getElementsByClassName('page'));  
-        pages.forEach(page=>{
-        hide(page.id); 
-    });
+        pages.forEach(page=>hide(page.id));
 }
+
 function show(name) {
     const page = document.getElementById(name);
     if (page) {
@@ -49,7 +48,7 @@ function showPage(id) {
 
 showPage('skills');
 
-document.querySelector('#top-menu-bar').addEventListener("click", (e)=>{
+document.querySelector('#top-menu-bar').addEventListener("click", e=>{
     
     if (e.target.matches("a")) {
         const id= e.target.getAttribute("data-page");
@@ -85,9 +84,9 @@ function sortSkillsByName (a,b) {
     return b.endorsements - a.endorsements;
  };
 
-fetch("data/skills.json").then(response => {
-    return response.json();
-}).then(skills=>{
+fetch("data/skills.json")
+.then(response => response.json())
+.then(skills => {
     skills.sort(sortSkillsByEndorsemenets);
     window.skills = skills; /* same name variable global >local */
     showSkills(skills);
