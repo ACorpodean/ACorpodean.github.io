@@ -20,7 +20,7 @@ function hide(name) {
 
 function hideAllPages() {
     const pages=Array.from(document.getElementsByClassName('page'));  
-        pages.forEach((page)=>{
+        pages.forEach(page=>{
         hide(page.id); 
     });
 }
@@ -61,7 +61,7 @@ document.querySelector('#top-menu-bar').addEventListener("click", (e)=>{
 window.skills = [];
 
 function showSkills(skills) {
-    const skillsHtml = skills.map((skill)=>{
+    const skillsHtml = skills.map(skill => {
         const favorit = skill.favorit ? 'class="favorit"' : '';
         const endorsements = skill.endorsements >5 ? `<span>${skill.endorsements}</span>` : '';
         return `<li ${favorit}>${skill.name.toLowerCase()} ${endorsements}</li>`;
@@ -85,9 +85,9 @@ function sortSkillsByName (a,b) {
     return b.endorsements - a.endorsements;
  };
 
-fetch("data/skills.json").then((response)=>{
+fetch("data/skills.json").then(response => {
     return response.json();
-}).then((skills)=>{
+}).then(skills=>{
     skills.sort(sortSkillsByEndorsemenets);
     window.skills = skills; /* same name variable global >local */
     showSkills(skills);
