@@ -20,7 +20,7 @@ function hide(name) {
 
 function hideAllPages() {
     const pages=Array.from(document.getElementsByClassName('page'));  
-        pages.forEach(page=>hide(page.id));
+        pages.forEach((page) => {hide(page.id)});
 }
 
 function show(name) {
@@ -48,7 +48,7 @@ function showPage(id) {
 
 showPage('skills');
 
-document.querySelector('#top-menu-bar').addEventListener("click", e=>{
+document.querySelector('#top-menu-bar').addEventListener("click", (e)=>{
     
     if (e.target.matches("a")) {
         const id= e.target.getAttribute("data-page");
@@ -60,7 +60,7 @@ document.querySelector('#top-menu-bar').addEventListener("click", e=>{
 window.skills = [];
 
 function showSkills(skills) {
-    const skillsHtml = skills.map(skill => {
+    const skillsHtml = skills.map((skill) => {
         const favorit = skill.favorit ? 'class="favorit"' : '';
         const endorsements = skill.endorsements >5 ? `<span>${skill.endorsements}</span>` : '';
         return `<li ${favorit}>${skill.name.toLowerCase()} ${endorsements}</li>`;
@@ -85,8 +85,8 @@ const sortSkillsByName = (a,b) => {
  };
 
 fetch("data/skills.json")
-.then(response => response.json())
-.then(skills => {
+.then((response) => {response.json();})
+.then((skills) => {
     skills.sort(sortSkillsByEndorsemenets);
     window.skills = skills; /* same name variable global >local */
     showSkills(skills);
