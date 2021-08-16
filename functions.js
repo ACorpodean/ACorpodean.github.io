@@ -85,7 +85,7 @@ const sortSkillsByName = (a,b) => {
  };
 
 fetch("data/skills.json")
-.then((response) => {response.json();})
+.then((response) => {return response.json();})
 .then((skills) => {
     skills.sort(sortSkillsByEndorsemenets);
     window.skills = skills; /* same name variable global >local */
