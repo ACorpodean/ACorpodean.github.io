@@ -20,7 +20,7 @@ function hide(name) {
 
 function hideAllPages() {
     const pages=Array.from(document.getElementsByClassName('page'));  
-        pages.forEach(page => {hide(page.id)});
+        pages.forEach(page => hide(page.id));
 }
 
 function show(name) {
@@ -84,8 +84,8 @@ const sortSkillsByName = (a,b) => {
     return b.endorsements - a.endorsements;
  };
 
-fetch("data/skills.json")
-.then(response => {return response.json();})
+fetch("data/skills.json") 
+.then(response => response.json())
 .then(skills => {
     skills.sort(sortSkillsByEndorsemenets);
     window.skills = skills; /* same name variable global >local */
